@@ -1,0 +1,20 @@
+flutter_native_splash:
+  color: "#42a5f5"  # Màu nền của splash screen
+  image: assets/images/logo.png  # Đường dẫn đến hình ảnh của bạn
+
+  android_12:
+    # Cấu hình splash cho Android 12 trở lên (Pixel của bạn có thể chạy Android 12+)
+    image: assets/images/logo.png
+    icon_background_color: "#42a5f5"
+
+  # Các tùy chọn khác
+  android: true
+  ios: true
+  web: false
+
+  # Tùy chọn thêm
+  color_dark: "#000000"  # Màu nền khi chế độ tối
+  image_dark: assets/images/logo_dark.png  # Hình ảnh cho chế độ tối
+
+  # Kích thước và căn chỉnh
+  fullscreen: true
