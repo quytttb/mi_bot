@@ -160,6 +160,7 @@ class LoginScreen extends ConsumerWidget {
                 //controller: passwordController, // Thêm controller nếu cần
                 fontSizeSubtitle: fontSizeSubtitle,
               ),
+              const SizedBox(height: 16),
               LoginButton(buttonHeight: buttonHeight),
               const SizedBox(height: 16),
               SignUpButton(buttonHeight: buttonHeight),

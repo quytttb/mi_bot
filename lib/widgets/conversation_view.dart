@@ -19,6 +19,7 @@ class ConversationView extends StatelessWidget {
         return MessageBubble(
           isUser: message.isUser,
           text: message.text,
+          animate: !message.isUser && index == messages.length - 1,
         );
       },
     );

@@ -5,11 +5,7 @@ class InputBar extends StatelessWidget {
   final TextEditingController controller;
   final VoidCallback onSend;
 
-  const InputBar({
-    super.key,
-    required this.controller,
-    required this.onSend,
-  });
+  const InputBar({super.key, required this.controller, required this.onSend});
 
   @override
   Widget build(BuildContext context) {
@@ -36,12 +32,26 @@ class InputBar extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(width: 8),
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: IconButton(
-              icon: SvgPicture.asset('assets/images/send_icon.svg'),
-              onPressed: onSend,
+          const SizedBox(width: 12),
+          InkWell(
+            onTap: onSend,
+            borderRadius: BorderRadius.circular(24),
+            child: Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Theme.of(context).primaryColor,
+                shape: BoxShape.circle,
+              ),
+              child: SvgPicture.asset(
+                'assets/images/send_icon.svg',
+                width: 20,
+                height: 20,
+                // If your SVG is not white, you may need to add colorFilter
+                colorFilter: const ColorFilter.mode(
+                  Colors.white,
+                  BlendMode.srcIn,
+                ),
+              ),
             ),
           ),
         ],

@@ -37,10 +37,12 @@ dependencies:
   flutter_native_splash: ^2.4.5
   google_fonts: ^6.2.1
   google_generative_ai: ^0.4.6
+  flutter_markdown: ^0.6.18
   flutter_dotenv: ^5.2.1
   flutter_svg: ^2.0.17
   flutter_riverpod: ^2.6.1
   riverpod_annotation: ^2.6.1
+  flutter_secure_storage: ^8.0.0
 
 dev_dependencies:
   flutter_test:

@@ -21,7 +21,7 @@ class LoginButton extends ConsumerWidget {
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         ),
         child: const Text(
-          'Đăng nhập',
+          'Login 😀',
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,
