@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:mi_bot/screens/home/home_screen.dart';
 import '../../providers/auth_provider.dart';
+import '../../services/auth_service.dart';
+import '../../services/keycloak_service.dart';
 
 class LoginButton extends ConsumerWidget {
   final double buttonHeight;
@@ -9,13 +12,29 @@ class LoginButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final authController = ref.read(authProvider);
-
+    final authService = AuthService();
     return SizedBox(
       width: double.infinity,
       height: buttonHeight,
       child: ElevatedButton(
-        onPressed: () => authController.login(context),
+        onPressed: () async {
+          // final keycloakService = KeycloakService();
+          // await keycloakService.login(context, ref);
+          // final result = await authService.signIn();
+          // if (context.mounted) {
+          //   if (result != null) {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => HomeScreen()),
+          );
+          //);
+          // } else {
+          //   ScaffoldMessenger.of(context).showSnackBar(
+          //     const SnackBar(content: Text("Đăng nhập thất bại! Hãy thử lại.")),
+          //   );
+          // }
+          //}
+        },
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.blue[400],
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),

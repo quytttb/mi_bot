@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 final authProvider = Provider((ref) => AuthController());
 
 class AuthController {
+
   void login(BuildContext context) {
     if (ModalRoute.of(context)?.settings.name == '/login') {
       Navigator.pushNamed(context, '/home');
@@ -22,4 +23,10 @@ class AuthController {
   void loginWithApple(BuildContext context) {
     // Xử lý đăng nhập Apple
   }
+
+  /*void logout() {
+    // Xóa thông tin phiên đăng nhập
+    // Điều hướng đến màn hình đăng nhập
+    Navigator.pushNamedAndRemoveUntil(context, '/login', (route) => false);
+  }*/
 }

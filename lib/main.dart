@@ -6,9 +6,15 @@ import 'package:mi_bot/screens/auth/onboarding_screen.dart';
 import 'package:mi_bot/screens/home/home_screen.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:mi_bot/services/environment.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 Future main() async {
-  await dotenv.load(fileName: "keys.env");
+  await dotenv.load(fileName: Environment.fileName);
+
+  // Khởi tạo FlutterSecureStorage
+  const FlutterSecureStorage secureStorage = FlutterSecureStorage();
+
   // Ensure Flutter is initialized before setting system UI
   WidgetsFlutterBinding.ensureInitialized();
   // Set status bar icons to dark (black) or light (white) based on your app's theme
@@ -43,8 +49,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/onboarding',
       routes: {
-        '/onboarding': (context) => const OnboardingScreen(),
-        '/login': (context) => const LoginScreen(),
+        '/onboarding': (context) => const LoginScreen(),
+        '/login': (context) => const OnboardingScreen(),
         '/home': (context) => const HomeScreen(),
       },
     );
